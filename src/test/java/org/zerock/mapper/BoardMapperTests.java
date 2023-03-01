@@ -44,6 +44,19 @@ public class BoardMapperTests {
 	}
 
 	@Test
+	public void testCreate() {
+		for (int i = 1; i <= 1000; i++) {
+			BoardVO board = new BoardVO();
+			board.setTitle(i+"번째 글 제목입니다...");
+			board.setContent(i+"번째 글 내용입니다...");
+			board.setWriter("user0"+(i%10));
+
+			mapper.insert(board);
+			log.info(board);
+		}
+	}
+
+	@Test
 	public void testInsertSelectKey() {
 
 		BoardVO board = new BoardVO();
