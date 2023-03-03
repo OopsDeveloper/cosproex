@@ -25,6 +25,22 @@
 		</trim>
 	</sql>
 
+	<sql id="criteriaif">
+		<trim prefix="(" suffix=") AND ">
+			<foreach collection="typeArr" item="type" separator="OR">
+				<if test="type == 'T'.toString()">
+					title like '%'||#{keyword}||'%'
+				</if>
+				<if test="type == 'C'.toString()">
+					title like '%'||#{keyword}||'%'
+				</if>
+				<if test="type == 'W'.toString()">
+					title like '%'||#{keyword}||'%'
+				</if>
+			</foreach>
+		</trim>
+	</sql>
+
 
 	<select id="getList" resultType="org.zerock.domain.BoardVO">
 	<![CDATA[
