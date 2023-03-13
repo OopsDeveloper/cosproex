@@ -26,7 +26,7 @@
 		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
 		<property name="url" value="jdbc:oracle:thin:@oopsdev_high?TNS_ADMIN=C:/orclecloud/Wallet_oopsdev"/>
 		<property name="username" value="ADMIN"/>
-		<property name="password" value="Cc3647cc!@#$"/>
+		<property name="password" value="Cc3647cc157476"/>
 	</bean>
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
