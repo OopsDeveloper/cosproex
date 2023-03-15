@@ -85,6 +85,7 @@
 		#{bno}
 	</update>
 
+
 	<!-- <select id="getListWithPaging" resultType="org.zerock.domain.BoardVO"> 
 		<![CDATA[ select bno, title, content, writer, regdate, updatedate from ( 
 		select /*+INDEX_DESC(tbl_board pk_board) */ rownum rn, bno, title, content, 
