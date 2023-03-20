@@ -7,8 +7,10 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.zerock.domain.Criteria;
 import org.zerock.domain.ReplyVO;
 
+import java.util.List;
 import java.util.stream.IntStream;
 
 @RunWith(SpringRunner.class)
@@ -33,6 +35,39 @@ public class ReplyMapperTests {
 
             mapper.insert(vo);
         });
+    }
+
+    @Test
+    public void testRead() {
+        Long targetRno = 5L;
+        ReplyVO vo = mapper.read(targetRno);
+        log.info(vo);
+    }
+
+    @Test
+    public void testDelete() {
+        Long targetRno = 1L;
+
+        mapper.delete(targetRno);
+    }
+    @Test
+    public void testUpdate() {
+        Long targetRno = 10L;
+
+        ReplyVO vo = mapper.read(targetRno);
+        vo.setReply("Update Reply");
+
+        int count = mapper.update(vo);
+        log.info("Update Count: " + count);
+    }
+
+    @Test
+    public void testList() {
+        Criteria cri = new Criteria();
+
+        List<ReplyVO> replies = mapper.getListWithPaging(cri, bnoArr[0]);
+
+        replies.forEach(reply -> log.info(reply));
     }
 
     @Test
